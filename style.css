@@ -1,6 +1,6 @@
-* {
+/* * {
     border: 1px solid black;
-}
+} */
 
 body {
     grid-template-areas: 
@@ -43,4 +43,15 @@ body {
     justify-content: center;
     height: 250px;
     width: 250px;
+    font-size: 50px;
+}
+
+.top-left, .center-left, .bottom-left, 
+.top-center, .center-center, .bottom-center {
+    border-right: 1px solid black;
+}
+
+.top-left, .top-center, .top-right, 
+.center-left, .center-center, .center-right {
+    border-bottom: 1px solid black;
 }
