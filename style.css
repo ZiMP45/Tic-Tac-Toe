@@ -2,6 +2,14 @@
     border: 1px solid black;
 } */
 
+:root {
+    --cordovan: #9B3441;
+    --ecru: #B8C99B;
+    --butterscotch: #D8972C;
+    --orange: #BD632F;
+    --charcoal: #273E47;
+}
+
 body {
     grid-template-areas: 
     "header header header"
@@ -16,7 +24,9 @@ body {
     justify-content: center;
     font-size: 80px;
     height: 100px;
-    margin-bottom: 20px;
+    padding: 24px;
+    background-color: var(--charcoal);
+    color: white;
     grid-area: header;
 }
 
@@ -25,6 +35,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: var(--orange);
 }
 
 #gameboard {
@@ -33,6 +44,7 @@ body {
     grid-template-rows: repeat(3 1fr);
     justify-content: center;
     align-items: center;
+    padding: 24px;
 }
 
 .top-left, .top-center, .top-right,
@@ -48,10 +60,10 @@ body {
 
 .top-left, .center-left, .bottom-left, 
 .top-center, .center-center, .bottom-center {
-    border-right: 1px solid black;
+    border-right: 2px solid black;
 }
 
 .top-left, .top-center, .top-right, 
 .center-left, .center-center, .center-right {
-    border-bottom: 1px solid black;
+    border-bottom: 2px solid black;
 }
