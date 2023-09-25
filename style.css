@@ -64,30 +64,6 @@ body {
     border: 2px solid var(--lightgrey);
 }
 
-#choose {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 400px;
-    height: 400px;
-    padding: 12px;
-
-    background-color: var(--dark);
-}
-
-#choose div {
-    font-size: 20px;
-    color: var(--sage);
-}
-
-#buttons {
-    margin-top: 12px;
-}
-
 /* modal section */
 
 .modal {
