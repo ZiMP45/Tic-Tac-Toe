@@ -3,17 +3,12 @@
 } */
 
 :root {
-    --eerie: #1B2021;
-    --ebony: #51513D;
-    --reseda: #7C7D52;
-    --moss: #A6A867;
-    --vanilla: #E3DC95;
-    --pearl: #E3DCC2;
-
+    --eerie: #1D200F;
     --dark: #262B15;
     --grey: #3f3f3f;
     --medium: #464B37;
     --sage: #848871;
+    --ash: #A5A99E;
     --lightgrey: #AFB4AD;
 }
 
@@ -89,4 +84,56 @@ body {
 
 #buttons {
     margin-top: 12px;
+}
+
+/* modal section */
+
+.modal {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    /* transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out; */
+    border: none;
+    z-index: 10;
+    background-color: white;
+    width: 300px;
+    max-width: 80%;
+    border-radius: 16px;
+}
+
+.modal-header {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--dark);
+    color: var(--lightgrey);
+    border-radius: 16px 16px 0px 0px;
+    font-size: 1.25rem;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px 15px;
+    height: 150px;
+    background-color: var(--ash);
+    border-radius: 0px 0px 16px 16px;
+}
+
+.modal-body button {
+    width: 80px;
+    height: 30px;
+    font-size: 1.25rem;
+    border-radius: 14px;
+    background-color: var(--eerie);
+    border: none;
+    color: var(--sage)
+}
+
+.modal-body button:hover {
+    border: 2px solid var(--lightgrey);
 }
