@@ -30,7 +30,7 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 70px;
-    height: 80px;
+    height: 100px;
     padding: 24px;
     margin: 0;
     background-color: var(--dark);
@@ -53,9 +53,11 @@ body {
 
     width: 200px;
     height: 50px;
+    border-radius: 16px;
     background-color: var(--dark);
     border: none;
-    color: var(--pearl);
+    color: var(--ash);
+    font-size: 1.25rem;
 }
 
 .start:hover {
@@ -92,8 +94,8 @@ body {
     position: fixed;
     top: 50%;
     transform: translateY(-50%);
-    /* transform: translate(-50%, -50%) scale(0);
-    transition: 200ms ease-in-out; */
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
     border: none;
     z-index: 10;
     background-color: white;
@@ -103,14 +105,14 @@ body {
 }
 
 .modal-header {
-    padding: 10px 15px;
+    padding-top: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--dark);
-    color: var(--lightgrey);
+    background-color: var(--ash);
+    color: var(--dark);
     border-radius: 16px 16px 0px 0px;
-    font-size: 1.25rem;
+    font-size: 1.75rem;
 }
 
 .modal-body {
@@ -136,4 +138,25 @@ body {
 
 .modal-body button:hover {
     border: 2px solid var(--lightgrey);
+}
+
+.modal.active {
+    transform: translateY(-50%) scale(1);
+}
+
+#overlay {
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    pointer-events: none;
+}
+
+#overlay.active {
+    opacity: 1;
+    pointer-events: all;
 }
