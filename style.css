@@ -9,6 +9,12 @@
     --moss: #A6A867;
     --vanilla: #E3DC95;
     --pearl: #E3DCC2;
+
+    --dark: #262B15;
+    --grey: #3f3f3f;
+    --medium: #464B37;
+    --sage: #848871;
+    --lightgrey: #AFB4AD;
 }
 
 body {
@@ -17,16 +23,22 @@ body {
     "game game game"
     "game game game"
     "game game game";
+    background-color: var(--sage);
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
 }
 
 #header {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 80px;
-    height: 100px;
+    font-size: 70px;
+    height: 80px;
     padding: 24px;
-    background-color: var(--ebony);
+    margin: 0;
+    background-color: var(--dark);
     color: white;
     grid-area: header;
 }
@@ -34,37 +46,47 @@ body {
 #game {
     grid-area: game;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    background-color: var(--moss);
+    justify-items: center;
 }
 
-#gameboard {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3 1fr);
-    justify-content: center;
-    align-items: center;
-    padding: 24px;
+.start {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 200px;
+    height: 50px;
+    background-color: var(--dark);
+    border: none;
+    color: var(--pearl);
 }
 
-.top-left, .top-center, .top-right,
-.center-left, .center-center, .center-right,
-.bottom-left, .bottom-center, .bottom-right {
+.start:hover {
+    border: 2px solid var(--lightgrey);
+}
+
+#choose {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 250px;
-    width: 250px;
-    font-size: 50px;
+    justify-content: space-evenly;
+    width: 400px;
+    height: 400px;
+    padding: 12px;
+
+    background-color: var(--dark);
 }
 
-.top-left, .center-left, .bottom-left, 
-.top-center, .center-center, .bottom-center {
-    border-right: 2px solid black;
+#choose div {
+    font-size: 20px;
+    color: var(--sage);
 }
 
-.top-left, .top-center, .top-right, 
-.center-left, .center-center, .center-right {
-    border-bottom: 2px solid black;
+#buttons {
+    margin-top: 12px;
 }
