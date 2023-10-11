@@ -1,12 +1,17 @@
-- create object for player details
-    - on selection of character, update player information with that character
-- on selection of character, output game board to page
-- I don't even know really
-- gameboard is an array inside of an object 
-- reread last lesson better
-- eventlistener into each section listening for click and based on the player, put that character in the box
-    - if box is taken, don't allow to update that cell
-- check for three in a row in all directions somehow
+- createPlayer object  
+    - name and marker
 
-- no idea how but create an AI somehow to play against
-    - probably something with math.random selection output to random cell
+- gameboard object
+    - generate board array
+        - initialize array for board (length of 9) with no contents in it
+    - display grid for gameboard
+        - DOM element creation for div that holds the square
+        - gtc and gtr for styling
+    - add eventlistener for each square
+        - input marker when square is clicked
+
+- game object
+    - declare players
+    - declare winning conditions arrays
+    - checkWinner
+    - return all functions at bottom

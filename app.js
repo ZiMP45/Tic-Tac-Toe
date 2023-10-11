@@ -13,3 +13,9 @@ function openModal(modal) {
     modal.classList.add('active');
     overlay.classList.add('active');
 }
+
+
+
+const createPlayer = (name, marker) => {
+    return {name, marker};
+}
