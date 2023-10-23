@@ -1,6 +1,6 @@
-* {
+/* * {
     border: 1px solid black;
-}
+} */
 
 :root {
     --eerie: #1D200F;
@@ -44,6 +44,8 @@ body {
     flex-direction: column;
     align-items: center;
     justify-items: center;
+
+    margin-top: 36px;
 }
 
 .start {
@@ -141,13 +143,25 @@ body {
 
 .gameboard {
     display: grid;
-    width: 500px;
-    height: 500px;
+    width: 600px;
+    height: 600px;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
 }
 
 .gameboard > div {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 80px;
+}
+
+.topleft, .centerleft, .bottomleft,
+.topcenter, .centercenter, .bottomcenter {
+    border-right: 1px solid black;
+}
+
+.topleft, .topcenter, .topright,
+.centerleft, .centercenter, .centerright {
+    border-bottom: 1px solid black;
 }
