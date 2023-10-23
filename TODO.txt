@@ -15,3 +15,27 @@
     - declare winning conditions arrays
     - checkWinner
     - return all functions at bottom
+
+
+
+
+Other notes 10/22/23
+
+Factory functions are objects used to create other objects (an object factory)
+
+// create document elements, use for game board maybe?
+function createElements(type, text, color) {
+    const el = document.createElements(type)
+    el.innerText = text
+    el.style.color = color
+    document.body.append(el)
+    return {
+        el,
+        setText(text) {
+            el.innerText = text
+        },
+        setColor(color) {
+            el.style.color = color
+        }
+    }
+}

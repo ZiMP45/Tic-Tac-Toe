@@ -1,6 +1,6 @@
-/* * {
+* {
     border: 1px solid black;
-} */
+}
 
 :root {
     --eerie: #1D200F;
@@ -135,4 +135,19 @@ body {
 #overlay.active {
     opacity: 1;
     pointer-events: all;
+}
+
+/* style game board */
+
+.gameboard {
+    display: grid;
+    width: 500px;
+    height: 500px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.gameboard > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
