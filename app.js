@@ -1,5 +1,6 @@
 const openModalButtons = document.querySelectorAll('[data-modal-target]');
 const overlay = document.getElementById('overlay');
+const startButton = document.querySelector(".start");
 
 openModalButtons.forEach(button => {
     button.addEventListener('click', () => {
@@ -20,13 +21,16 @@ function closeModal(modal) {
     overlay.classList.remove('active');
 }
 
-function createElements(type) {
+// gets the job done, want to look into something else, doesn't use an array to store player
+// selections within it
+
+function drawBoard(type) {
     let board = document.querySelector(".gameboard");
-    const startButton = document.querySelector(".start");
 
     for (let i = 0; i < 9; i++) {
         const el = document.createElement(type);
         el.classList.add("square");
+        el.textContent = "X";
         board.append(el);
     }
 

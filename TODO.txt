@@ -2,9 +2,9 @@
     - name and marker
 
 - gameboard object
-    - generate board array
+    - generate board array (easy initialization -> arr.length = 9 somehow, each element is [])
         - initialize array for board (length of 9) with no contents in it
-    - display grid for gameboard
+    - display grid for gameboard (drawBoard function)
         - DOM element creation for div that holds the square
         - gtc and gtr for styling
     - add eventlistener for each square
@@ -22,32 +22,3 @@
 Other notes 10/22/23
 
 Factory functions are objects used to create other objects (an object factory)
-
-// create document elements, use for game board maybe?
-function createElements(type, text, color) {
-    const el = document.createElements(type)
-    el.innerText = text
-    el.style.color = color
-    document.body.append(el)
-    return {
-        el,
-        setText(text) {
-            el.innerText = text
-        },
-        setColor(color) {
-            el.style.color = color
-        }
-    }
-}
-
-
-figure out how to put blank "gameboard" DOM element into a factory function that is triggered when clicked
-
-function createElements(type) {
-    let board = document.querySelector(".gameboard");
-    for (let i = 0; i < 9; i++) {
-        const el = document.createElements(type);
-        el.classList.add("square");
-        board.append(el);
-    }
-}

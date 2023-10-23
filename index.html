@@ -17,24 +17,13 @@
                 <div class="title">Choose your character</div>
             </div>
             <div class="modal-body">
-                <button class="x" onclick="createElements('div')">&#88;</button>
-                <button class="o" onclick="createElements('div')">&#79;</button>
+                <button class="x" onclick="drawBoard('div')">&#88;</button>
+                <button class="o" onclick="drawBoard('div')">&#79;</button>
             </div>
         </div>
         <div id="overlay"></div>
 
-        <div class="gameboard">
-            <!-- <div class="square" id="topleft">X</div>
-            <div class="square" id="topcenter">X</div>
-            <div class="square" id="topright">O</div>
-            <div class="square" id="centerleft">X</div>
-            <div class="square" id="centercenter">O</div>
-            <div class="square" id="centerright">O</div>
-            <div class="square" id="bottomleft">O</div>
-            <div class="square" id="bottomcenter">X</div>
-            <div class="square" id="bottomright">X</div> -->
-        </div>
-        
+        <div class="gameboard"></div>
     </div>
 
     <script src="app.js"></script>
