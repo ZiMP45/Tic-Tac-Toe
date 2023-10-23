@@ -14,8 +14,11 @@ function openModal(modal) {
     overlay.classList.add('active');
 }
 
-
-
-const createPlayer = (name, marker) => {
-    return {name, marker};
+function createElements(type) {
+    let board = document.querySelector(".gameboard");
+    for (let i = 0; i < 9; i++) {
+        const el = document.createElement(type);
+        el.classList.add("square");
+        board.append(el);
+    }
 }

@@ -156,12 +156,12 @@ body {
     font-size: 80px;
 }
 
-.topleft, .centerleft, .bottomleft,
-.topcenter, .centercenter, .bottomcenter {
+#topleft, #centerleft, #bottomleft,
+#topcenter, #centercenter, #bottomcenter {
     border-right: 1px solid black;
 }
 
-.topleft, .topcenter, .topright,
-.centerleft, .centercenter, .centerright {
+#topleft, #topcenter, #topright,
+#centerleft, #centercenter, #centerright {
     border-bottom: 1px solid black;
 }

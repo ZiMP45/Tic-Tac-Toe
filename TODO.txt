@@ -39,3 +39,15 @@ function createElements(type, text, color) {
         }
     }
 }
+
+
+figure out how to put blank "gameboard" DOM element into a factory function that is triggered when clicked
+
+function createElements(type) {
+    let board = document.querySelector(".gameboard");
+    for (let i = 0; i < 9; i++) {
+        const el = document.createElements(type);
+        el.classList.add("square");
+        board.append(el);
+    }
+}
