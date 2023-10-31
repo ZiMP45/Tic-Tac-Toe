@@ -24,16 +24,23 @@ function closeModal(modal) {
 // gets the job done, want to look into something else, doesn't use an array to store player
 // selections within it
 
-function game(type) {
+function game(a) {
+    let name = document.querySelector('#name').value;
+    let target = a.getAttribute('data-player');
     let board = document.querySelector(".gameboard");
+    
+    return {
+        player: {name, target},
+        drawBoard: function () {
+            for (let i = 0; i < 9; i++) {
+                const el = document.createElement('div');
+                el.classList.add("square");
+                el.textContent = "";
+                board.append(el);
 
-    for (let i = 0; i < 9; i++) {
-        const el = document.createElement(type);
-        el.classList.add("square");
-        el.textContent = "X";
-        board.append(el);
-    }
-
-    closeModal(modal);
-    startButton.remove();
+                closeModal(modal);
+                startButton.remove();
+            }
+        }
+    };
 }

@@ -18,11 +18,11 @@
             </div>
             <div class="modal-body">
                 <div class="name">
-                    <input type="text" placeholder="Name">
+                    <input type="text" placeholder="Name" id="name" name="name">
                 </div>
                 <div class="buttons">
-                    <button class="x" onclick="game('div')">&#88;</button>
-                    <button class="o" onclick="game('div')">&#79;</button>
+                    <button class="x" data-player="X" onclick="game(this)" >&#88;</button>
+                    <button class="o" data-player="O" onclick="game(this)" >&#79;</button>
                 </div>
             </div>
         </div>
