@@ -22,3 +22,5 @@
 Other notes 10/22/23
 
 Factory functions are objects used to create other objects (an object factory)
+
+onclick, call factory function that displays game board

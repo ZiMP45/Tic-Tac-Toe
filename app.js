@@ -24,7 +24,7 @@ function closeModal(modal) {
 // gets the job done, want to look into something else, doesn't use an array to store player
 // selections within it
 
-function drawBoard(type) {
+function game(type) {
     let board = document.querySelector(".gameboard");
 
     for (let i = 0; i < 9; i++) {
