@@ -2,6 +2,8 @@
     border: 1px solid black;
 } */
 
+/* color palette */
+
 :root {
     --eerie: #1D200F;
     --dark: #262B15;
@@ -11,6 +13,8 @@
     --ash: #A5A99E;
     --lightgrey: #AFB4AD;
 }
+
+/* page styling */
 
 body {
     grid-template-areas: 
@@ -170,6 +174,7 @@ body {
 }
 
 /* Internal borders for game board */
+
 .square {
     border-top: 1px solid black;
     border-left: 1px solid black;

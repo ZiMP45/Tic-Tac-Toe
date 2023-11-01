@@ -2,6 +2,8 @@ const openModalButtons = document.querySelectorAll('[data-modal-target]');
 const overlay = document.getElementById('overlay');
 const startButton = document.querySelector(".start");
 
+// functionality for modal 
+
 openModalButtons.forEach(button => {
     button.addEventListener('click', () => {
         const modal = document.querySelector(button.dataset.modalTarget)
@@ -21,8 +23,9 @@ function closeModal(modal) {
     overlay.classList.remove('active');
 }
 
-// gets the job done, want to look into something else, doesn't use an array to store player
-// selections within it
+// factory function stuff? Not super great. So far selects value from button, trying to create object with
+// player name and chosen character but don't have that yet
+// will print out the game board as well once I figure out the object part
 
 function game(a) {
     let name = document.querySelector('#name').value;
