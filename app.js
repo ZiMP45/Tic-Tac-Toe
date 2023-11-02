@@ -14,8 +14,6 @@ openModalButtons.forEach(button => {
     })
 })
 
-// functions for other stuff
-
 function openModal(modal) {
     if (modal == null) return;
     modal.classList.add('active');
@@ -28,6 +26,8 @@ function closeModal(modal) {
     overlay.classList.remove('active');
 }
 
+// functions for other stuff
+
 function drawBoard() {
     for (let i = 0; i < 9; i++) {
         const el = document.createElement('div');
@@ -37,12 +37,16 @@ function drawBoard() {
     }
 }
 
+function playerObj() {
+    let name = document.getElementById('name').value;
+    let xValue = playerx.dataset.player;
+    let player = {playerName: name, playerCard: xValue};
+    return player;
+}
+
 function dostuff() {
     closeModal(modal);
     startButton.remove();
     drawBoard();
+    console.log(playerObj());
 }
-
-// factory function stuff? Not super great. So far selects value from button, trying to create object with
-// player name and chosen character but don't have that yet
-// will print out the game board as well once I figure out the object part
