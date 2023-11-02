@@ -1,6 +1,9 @@
 const openModalButtons = document.querySelectorAll('[data-modal-target]');
 const overlay = document.getElementById('overlay');
 const startButton = document.querySelector(".start");
+const board = document.querySelector(".gameboard");
+const playerx = document.querySelector('#xplayer');
+const playery = document.querySelector('#yplayer');
 
 // functionality for modal 
 
@@ -10,6 +13,8 @@ openModalButtons.forEach(button => {
         openModal(modal);
     })
 })
+
+// functions for other stuff
 
 function openModal(modal) {
     if (modal == null) return;
@@ -23,27 +28,21 @@ function closeModal(modal) {
     overlay.classList.remove('active');
 }
 
+function drawBoard() {
+    for (let i = 0; i < 9; i++) {
+        const el = document.createElement('div');
+        el.classList.add("square");
+        el.textContent = "";
+        board.append(el);
+    }
+}
+
+function dostuff() {
+    closeModal(modal);
+    startButton.remove();
+    drawBoard();
+}
+
 // factory function stuff? Not super great. So far selects value from button, trying to create object with
 // player name and chosen character but don't have that yet
 // will print out the game board as well once I figure out the object part
-
-function game(a) {
-    let name = document.querySelector('#name').value;
-    let target = a.getAttribute('data-player');
-    let board = document.querySelector(".gameboard");
-    
-    return {
-        player: {name, target},
-        drawBoard: function () {
-            for (let i = 0; i < 9; i++) {
-                const el = document.createElement('div');
-                el.classList.add("square");
-                el.textContent = "";
-                board.append(el);
-
-                closeModal(modal);
-                startButton.remove();
-            }
-        }
-    };
-}
