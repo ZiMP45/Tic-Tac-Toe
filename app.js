@@ -1,10 +1,10 @@
 const openModalButtons = document.querySelectorAll('[data-modal-target]');
 const overlay = document.getElementById('overlay');
-const startButton = document.querySelector(".start");
+const player1 = document.querySelector(".player1");
 const board = document.querySelector(".gameboard");
 const playerx = document.querySelector('#xplayer');
 const playery = document.querySelector('#yplayer');
-let gameArr = ['x', 'o', 'x', 'x', 'x', 'o', 'x' ,'o', 'o'];
+let gameArr = new Array(9);
 
 // functionality for modal 
 
@@ -29,14 +29,15 @@ function closeModal(modal) {
 
 // functions for other stuff
 
-// draws gameboard, adds class, adds eventlistener for when square is clicked
+// draws gameboard, adds class, adds eventlistener for when square is clicked, inputs playercard when clicked
 function drawBoard(player) {
     for (let i = 0; i < 9; i++) {
         const el = document.createElement('div');
         el.classList.add("square");
         el.setAttribute('data-index', i);
         el.addEventListener('click', () => {
-            el.innerHTML = player.playerCard;
+            gameArr[i] = player.playerCard;
+            el.innerHTML = gameArr[i];
         });
         board.append(el);
     }
@@ -44,13 +45,15 @@ function drawBoard(player) {
 
 function playerObj() {
     let name = document.getElementById('name').value;
+
     let card = playerx.dataset.player;
     let player = {playerName: name, playerCard: card};
     return player;
 }
 
 function dostuff() {
+    playerObj();
     closeModal(modal);
-    startButton.remove();
+    player1.remove();
     drawBoard(playerObj());
 }

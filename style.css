@@ -52,7 +52,7 @@ body {
     margin-top: 60px;
 }
 
-.start {
+.player1 {
     width: 200px;
     height: 50px;
     border-radius: 16px;
@@ -62,7 +62,7 @@ body {
     font-size: 1.25rem;
 }
 
-.start:hover {
+.player1:hover {
     border: 2px solid var(--lightgrey);
 }
 

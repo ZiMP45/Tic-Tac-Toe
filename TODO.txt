@@ -24,3 +24,10 @@ Other notes 10/22/23
 Factory functions are objects used to create other objects (an object factory)
 
 onclick, call factory function that displays game board
+
+11/2/23
+
+This spiraled, it does some stuff well but looking around shows just how off my thought process is especially
+when it relates to factory functions. Will look at the house example from TOP and restructure some stuff.
+I feel like I could do it with the way I'm going but it would take way longer and be way more complex and open to 
+bugs so may do a fairly hard restart later.
