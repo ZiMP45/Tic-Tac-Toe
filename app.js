@@ -4,8 +4,8 @@ const startButton = document.querySelector(".start");
 const board = document.querySelector(".gameboard");
 const playerx = document.querySelector('#xplayer');
 const playery = document.querySelector('#yplayer');
+const squares = document.querySelectorAll('square');
 let gameArr = new Array(9);
-console.log(gameArr);
 
 // functionality for modal 
 
@@ -34,7 +34,10 @@ function drawBoard() {
     for (let i = 0; i < 9; i++) {
         const el = document.createElement('div');
         el.classList.add("square");
-        el.textContent = "";
+        el.setAttribute('data-square', '');
+        el.addEventListener('click', () => {
+            alert('clicked');
+        });
         board.append(el);
     }
 }
