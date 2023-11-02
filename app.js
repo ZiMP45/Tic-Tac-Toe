@@ -4,6 +4,8 @@ const startButton = document.querySelector(".start");
 const board = document.querySelector(".gameboard");
 const playerx = document.querySelector('#xplayer');
 const playery = document.querySelector('#yplayer');
+let gameArr = new Array(9);
+console.log(gameArr);
 
 // functionality for modal 
 
@@ -48,5 +50,4 @@ function dostuff() {
     closeModal(modal);
     startButton.remove();
     drawBoard();
-    console.log(playerObj());
 }
