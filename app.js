@@ -5,7 +5,7 @@ const board = document.querySelector(".gameboard");
 const playerx = document.querySelector('#xplayer');
 const playery = document.querySelector('#yplayer');
 const squares = document.querySelectorAll('square');
-let gameArr = new Array(9);
+let gameArr = ['x', 'o', 'x', 'x', 'x', 'o', 'x' ,'o', 'o'];
 
 // functionality for modal 
 
@@ -30,13 +30,13 @@ function closeModal(modal) {
 
 // functions for other stuff
 
+// draws gameboard, adds class, adds eventlistener for when square is clicked
 function drawBoard() {
     for (let i = 0; i < 9; i++) {
         const el = document.createElement('div');
         el.classList.add("square");
-        el.setAttribute('data-square', '');
         el.addEventListener('click', () => {
-            alert('clicked');
+            el.innerHTML = gameArr[i];
         });
         board.append(el);
     }
