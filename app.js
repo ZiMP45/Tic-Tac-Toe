@@ -1,6 +1,7 @@
 const openModalButtons = document.querySelectorAll('[data-modal-target]');
 const overlay = document.getElementById('overlay');
 const player1 = document.querySelector(".player1");
+const player2 = document.querySelector(".player2");
 const board = document.querySelector(".gameboard");
 const playerx = document.querySelector('#xplayer');
 const playery = document.querySelector('#yplayer');
@@ -55,5 +56,6 @@ function dostuff() {
     playerObj();
     closeModal(modal);
     player1.remove();
+    player2.remove();
     drawBoard(playerObj());
 }
