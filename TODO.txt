@@ -31,3 +31,6 @@ This spiraled, it does some stuff well but looking around shows just how off my 
 when it relates to factory functions. Will look at the house example from TOP and restructure some stuff.
 I feel like I could do it with the way I'm going but it would take way longer and be way more complex and open to 
 bugs so may do a fairly hard restart later.
+
+
+11/3/23 - build from the inside out code: separate JS file
