@@ -30,32 +30,3 @@ function closeModal(modal) {
 
 // functions for other stuff
 
-// draws gameboard, adds class, adds eventlistener for when square is clicked, inputs playercard when clicked
-function drawBoard(player) {
-    for (let i = 0; i < 9; i++) {
-        const el = document.createElement('div');
-        el.classList.add("square");
-        el.setAttribute('data-index', i);
-        el.addEventListener('click', () => {
-            gameArr[i] = player.playerCard;
-            el.innerHTML = gameArr[i];
-        });
-        board.append(el);
-    }
-}
-
-function playerObj() {
-    let name = document.getElementById('name').value;
-
-    let card = playerx.dataset.player;
-    let player = {playerName: name, playerCard: card};
-    return player;
-}
-
-function dostuff() {
-    playerObj();
-    closeModal(modal);
-    player1.remove();
-    player2.remove();
-    drawBoard(playerObj());
-}
