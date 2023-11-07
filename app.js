@@ -80,10 +80,11 @@ function createGameBoard() {
     };
 }
 
-function doStuff() {
+function doStuff(thing) {
     const grid = document.getElementById('game-board');
     const startButton = document.querySelector('.start');
-    const gameContainer = document.querySelector('.game');    
+    const gameContainer = document.querySelector('.game');
+    const playerName = thing;
 
     for (let i = 0; i < 9; i++) {
         const el = document.createElement('div');
@@ -104,7 +105,7 @@ function doStuff() {
     closeModal(modal);
     startButton.remove();
 
-    const playerX = createPlayer("Player X", "X");
+    const playerX = createPlayer(playerName, "X");
     const playerO = createPlayer("Player O", "O");
     let currentPlayer = playerX;
     const gameBoard = createGameBoard();
