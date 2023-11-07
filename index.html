@@ -16,9 +16,12 @@
                 <div class="title">Choose your character</div>
             </div>
             <div class="modal-body">
-                <form action="#" method="dialog" id="myForm" onsubmit="doStuff(this.name.value)">
-                    <div class="name">
-                        <input type="text" placeholder="Name" id="name" name="name">
+                <form action="#" method="dialog" id="myForm" onsubmit="doStuff(this.name1.value, this.name2.value)">
+                    <div class="name1">
+                        <input type="text" placeholder="Player 1:" id="name1" name="name1">
+                    </div>
+                    <div class="name2">
+                        <input type="text" placeholder="Player 2:" id="name2" name="name2">
                     </div>
                     <div class="submit">
                         <input type="submit" value="Start Game">

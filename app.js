@@ -80,11 +80,12 @@ function createGameBoard() {
     };
 }
 
-function doStuff(thing) {
+function doStuff(thing1, thing2) {
     const grid = document.getElementById('game-board');
     const startButton = document.querySelector('.start');
     const gameContainer = document.querySelector('.game');
-    const playerName = thing;
+    const playerOneName = thing1;
+    const playerTwoName = thing2;
 
     for (let i = 0; i < 9; i++) {
         const el = document.createElement('div');
@@ -105,8 +106,8 @@ function doStuff(thing) {
     closeModal(modal);
     startButton.remove();
 
-    const playerX = createPlayer(playerName, "X");
-    const playerO = createPlayer("Player O", "O");
+    const playerX = createPlayer(playerOneName, "X");
+    const playerO = createPlayer(playerTwoName, "O");
     let currentPlayer = playerX;
     const gameBoard = createGameBoard();
 
@@ -145,4 +146,6 @@ function doStuff(thing) {
 
     status.textContent = `Current player: ${currentPlayer.name}`;
 }
+
+document.getElementById("myForm").reset();
 
