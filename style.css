@@ -150,18 +150,35 @@ body {
 #game-board {
     display: grid;
     grid-template-columns: repeat(3, 150px);
-    margin: 0 auto;
+    margin-bottom: 30px;
 }
 
 .cell {
     width: 150px;
     height: 150px;
-    font-size: 2em;
+    font-size: 4em;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid black;
     cursor: pointer;
+
+    color: white;
+
+    border-top: 1px solid var(--eerie);
+    border-left: 1px solid var(--eerie);
+    &:nth-child(-n + 2) {
+        border-top: 1px solid var(--eerie);
+    }
+    &:nth-child(odd) {
+        border-left: 1px solid var(--eerie);
+    }
+    &:nth-child(-n + 3) {
+        border-top: none;
+    }
+    &:first-child,
+    &:nth-child(3n + 1) {
+        border-left: none;
+    }
 }
 
 #status {
