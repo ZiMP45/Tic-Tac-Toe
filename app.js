@@ -83,12 +83,23 @@ function createGameBoard() {
 function doStuff() {
     const grid = document.getElementById('game-board');
     const startButton = document.querySelector('.start');
+    const gameContainer = document.querySelector('.game');    
 
     for (let i = 0; i < 9; i++) {
         const el = document.createElement('div');
         el.classList.add('cell');
         grid.appendChild(el);
     }
+
+    const statusDiv = document.createElement('div');
+    statusDiv.setAttribute('id', 'status');
+    gameContainer.appendChild(statusDiv);
+
+    const restart = document.createElement('button');
+    restart.setAttribute('id', 'restart-button');
+    restart.textContent = 'Restart Game';
+    gameContainer.appendChild(restart);
+
 
     closeModal(modal);
     startButton.remove();
