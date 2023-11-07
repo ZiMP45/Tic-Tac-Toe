@@ -32,6 +32,7 @@ function createPlayer (name, marker) {
 }
 
 function createGameBoard() {
+    // initialize empty array for board
     let board = new Array(9).fill(null);
 
     function makeMove(index, marker) {
@@ -45,7 +46,8 @@ function createGameBoard() {
     function isFull() {
         return board.every((cell) => cell !== null);
     }
-
+    
+    // winning combos to check board against
     function checkWin(marker) {
         const winningCombos = [
             [0, 1, 2],
@@ -67,6 +69,7 @@ function createGameBoard() {
         return [...board];
     }
 
+    // reset array
     function reset() {
         board = new Array(9).fill(null);
     }
@@ -87,12 +90,14 @@ function doStuff(thing1, thing2) {
     const playerOneName = thing1;
     const playerTwoName = thing2;
 
+    // DOM creation of cells, organized into 3x3 grid
     for (let i = 0; i < 9; i++) {
         const el = document.createElement('div');
         el.classList.add('cell');
         grid.appendChild(el);
     }
 
+    // status and restart button divs
     const statusDiv = document.createElement('div');
     statusDiv.setAttribute('id', 'status');
     gameContainer.appendChild(statusDiv);
@@ -102,10 +107,11 @@ function doStuff(thing1, thing2) {
     restart.textContent = 'Restart Game';
     gameContainer.appendChild(restart);
 
-
+    // closemodal and get rid of start button
     closeModal(modal);
     startButton.remove();
 
+    // assign input fields to player markers
     const playerX = createPlayer(playerOneName, "X");
     const playerO = createPlayer(playerTwoName, "O");
     let currentPlayer = playerX;
@@ -115,6 +121,7 @@ function doStuff(thing1, thing2) {
     const status = document.getElementById("status");
     const restartButton = document.getElementById("restart-button");
 
+    // on click of cell play through a round, input marker if empty cell, and check if there's a winner
     function handleCellClick(index) {
         if(!gameBoard.isFull() && !gameBoard.checkWin(currentPlayer.marker)) {
             if(gameBoard.makeMove(index, currentPlayer.marker)) {
@@ -131,6 +138,7 @@ function doStuff(thing1, thing2) {
         }
     }
 
+    // resets game on button click
     function restartGame() {
         gameBoard.reset();
         cells.forEach((cell) => (cell.textContent = ""));
