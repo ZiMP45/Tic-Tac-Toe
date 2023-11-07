@@ -29,6 +29,29 @@ body {
     grid-area: header;
 }
 
+#game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* start button */
+
+.start {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 200px;
+    height: 50px;
+    border-radius: 16px;
+    background-color: var(--dark);
+    border: none;
+    color: var(--ash);
+    font-size: 1.25rem;
+}
+
 /* modal section */
 
 .modal {
