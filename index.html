@@ -9,41 +9,32 @@
 <body>
     <div id="header">Tic-Tac-Toe</div>
 
-    <div id="game">
-        <!-- start button -->
+    <div id="start-modal">
         <button class="start" data-modal-target="#modal">START</button>
-        <!-- modal popup for player name and chosen icon -->
         <div class="modal" id="modal">
             <div class="modal-header" id="modal-header">
                 <div class="title">Choose your character</div>
             </div>
             <div class="modal-body">
-                <div class="name">
-                    <input type="text" placeholder="Name" id="name" name="name">
-                </div>
-                <div class="buttons">
-                    <button class="x" data-player="X" id="xplayer" onclick="dostuff()">&#88;</button>
-                    <button class="o" data-player="O" id="yplayer" onclick="dostuff()">&#79;</button>
-                </div>
+                <form action="" method="dialog" onsubmit="doStuff()">
+                    <div class="name">
+                        <input type="text" placeholder="Name" id="name" name="name">
+                    </div>
+                    <div class="submit">
+                        <input type="submit" value="Start Game">
+                    </div>
+                </form>
             </div>
         </div>
         <div id="overlay"></div>
     </div>
 
-        <!-- <div id="game-board">
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-        </div>
-        <div id="status"></div>
+    <div class="game">
+        <div id="game-board"></div>
+        <!-- <div id="status"></div>
         <button id="restart-button">Restart Game</button> -->
-        <script src="app.js"></script>
     </div>
+    
+    <script src="app.js"></script>
 </body>
 </html>

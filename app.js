@@ -80,42 +80,57 @@ function createGameBoard() {
     };
 }
 
-const playerX = createPlayer("Player X", "X");
-const playerO = createPlayer("Player O", "O");
-let currentPlayer = playerX;
-const gameBoard = createGameBoard();
+function doStuff() {
+    const grid = document.getElementById('game-board');
+    const startButton = document.querySelector('.start');
 
-const cells = document.querySelectorAll(".cell");
-const status = document.getElementById("status");
-const restartButton = document.getElementById("restart-button");
+    for (let i = 0; i < 9; i++) {
+        const el = document.createElement('div');
+        el.classList.add('cell');
+        grid.appendChild(el);
+    }
 
-function handleCellClick(index) {
-    if(!gameBoard.isFull() && !gameBoard.checkWin(currentPlayer.marker)) {
-        if(gameBoard.makeMove(index, currentPlayer.marker)) {
-            cells[index].textContent = currentPlayer.marker;
-            if(gameBoard.checkWin(currentPlayer.marker)) {
-                status.textContent = `${currentPlayer.name} wins!`;
-            } else if (gameBoard.isFull()) {
-                status.textContent = "It's a draw!";
-            } else {
-                currentPlayer = currentPlayer === playerX ? playerO : playerX;
-                status.textContent = `Current player: ${currentPlayer.name}`;
+    closeModal(modal);
+    startButton.remove();
+
+    const playerX = createPlayer("Player X", "X");
+    const playerO = createPlayer("Player O", "O");
+    let currentPlayer = playerX;
+    const gameBoard = createGameBoard();
+
+    const cells = document.querySelectorAll(".cell");
+    const status = document.getElementById("status");
+    const restartButton = document.getElementById("restart-button");
+
+    function handleCellClick(index) {
+        if(!gameBoard.isFull() && !gameBoard.checkWin(currentPlayer.marker)) {
+            if(gameBoard.makeMove(index, currentPlayer.marker)) {
+                cells[index].textContent = currentPlayer.marker;
+                if(gameBoard.checkWin(currentPlayer.marker)) {
+                    status.textContent = `${currentPlayer.name} wins!`;
+                } else if (gameBoard.isFull()) {
+                    status.textContent = "It's a draw!";
+                } else {
+                    currentPlayer = currentPlayer === playerX ? playerO : playerX;
+                    status.textContent = `Current player: ${currentPlayer.name}`;
+                }
             }
         }
     }
-}
 
-function restartGame() {
-    gameBoard.reset();
-    cells.forEach((cell) => (cell.textContent = ""));
+    function restartGame() {
+        gameBoard.reset();
+        cells.forEach((cell) => (cell.textContent = ""));
+        status.textContent = `Current player: ${currentPlayer.name}`;
+        currentPlayer = playerX;
+    }
+
+    cells.forEach((cell, index) => {
+        cell.addEventListener("click", () => handleCellClick(index));
+    });
+
+    restartButton.addEventListener("click", restartGame);
+
     status.textContent = `Current player: ${currentPlayer.name}`;
-    currentPlayer = playerX;
 }
 
-cells.forEach((cell, index) => {
-    cell.addEventListener("click", () => handleCellClick(index));
-});
-
-restartButton.addEventListener("click", restartGame);
-
-status.textContent = `Current player: ${currentPlayer.name}`;
