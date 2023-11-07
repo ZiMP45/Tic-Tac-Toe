@@ -1,11 +1,5 @@
 const openModalButtons = document.querySelectorAll('[data-modal-target]');
 const overlay = document.getElementById('overlay');
-const player1 = document.querySelector(".player1");
-const player2 = document.querySelector(".player2");
-const board = document.querySelector(".gameboard");
-const playerx = document.querySelector('#xplayer');
-const playery = document.querySelector('#yplayer');
-let gameArr = new Array(9);
 
 // functionality for modal 
 
@@ -30,3 +24,98 @@ function closeModal(modal) {
 
 // functions for other stuff
 
+function createPlayer (name, marker) {
+    return {
+        name,
+        marker,
+    };
+}
+
+function createGameBoard() {
+    let board = new Array(9).fill(null);
+
+    function makeMove(index, marker) {
+        if (!board[index]) {
+            board[index] = marker;
+            return true;
+        }
+        return false;
+    }
+
+    function isFull() {
+        return board.every((cell) => cell !== null);
+    }
+
+    function checkWin(marker) {
+        const winningCombos = [
+            [0, 1, 2],
+            [3, 4, 5],
+            [6, 7, 8],
+            [0, 3, 6],
+            [1, 4, 7],
+            [2, 5, 8],
+            [0, 4, 8],
+            [2, 4, 6],
+        ];
+
+        return winningCombos.some((combo) => 
+            combo.every((index) => board[index] === marker)
+        );
+    }
+
+    function getBoard() {
+        return [...board];
+    }
+
+    function reset() {
+        board = new Array(9).fill(null);
+    }
+
+    return {
+        makeMove,
+        isFull, 
+        checkWin,
+        getBoard,
+        reset,
+    };
+}
+
+const playerX = createPlayer("Player X", "X");
+const playerO = createPlayer("Player O", "O");
+let currentPlayer = playerX;
+const gameBoard = createGameBoard();
+
+const cells = document.querySelectorAll(".cell");
+const status = document.getElementById("status");
+const restartButton = document.getElementById("restart-button");
+
+function handleCellClick(index) {
+    if(!gameBoard.isFull() && !gameBoard.checkWin(currentPlayer.marker)) {
+        if(gameBoard.makeMove(index, currentPlayer.marker)) {
+            cells[index].textContent = currentPlayer.marker;
+            if(gameBoard.checkWin(currentPlayer.marker)) {
+                status.textContent = `${currentPlayer.name} wins!`;
+            } else if (gameBoard.isFull()) {
+                status.textContent = "It's a draw!";
+            } else {
+                currentPlayer = currentPlayer === playerX ? playerO : playerX;
+                status.textContent = `Current player: ${currentPlayer.name}`;
+            }
+        }
+    }
+}
+
+function restartGame() {
+    gameBoard.reset();
+    cells.forEach((cell) => (cell.textContent = ""));
+    status.textContent = `Current player: ${currentPlayer.name}`;
+    currentPlayer = playerX;
+}
+
+cells.forEach((cell, index) => {
+    cell.addEventListener("click", () => handleCellClick(index));
+});
+
+restartButton.addEventListener("click", restartGame);
+
+status.textContent = `Current player: ${currentPlayer.name}`;
